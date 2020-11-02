@@ -1,0 +1,14 @@
+<h1><%= @blogger.name %></h1>
+
+<label> Bio: </label>
+<%= @blogger.bio %>
+<br>
+<h5>Featured Post: <%= link_to @blogger.featured_post.title, post_path(@blogger.featured_post) %></h5>
+<h5>Top Five Blog Destinations: </h5>
+<ol>
+<% @blogger.top_five.each do |destination| %>
+    <li><%= destination.name %>
+<% end %>
+</ol>
+<h5>Total Likes: <%= @blogger.total_likes %></h5>
+<%= link_to 'Blogger Index', bloggers_path %>

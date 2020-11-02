@@ -1,0 +1,13 @@
+
+
+
+<h1><%= @post.title %></h1>
+<h3><%= link_to @post.blogger.name, blogger_path(@post.blogger) %></h3>
+<h4><%= link_to @post.destination.name, destination_path(@post.destination) %></h4>
+<%= @post.content %>
+<br>
+
+<%= @post.likes %>
+<%= button_to "Like Post", {:controller => :posts, :action => :like}, { :method => :patch } %>
+
+<br><br><%= link_to "Posts Index", posts_path %>
